@@ -17,13 +17,10 @@ const paContinuar = data => {
             if (input.type === 'text' && parseFloat(input.value) > 0) {
                 amount = Number(input.value)* parseFloat(input.getAttribute('data-price'));
                 inputsGreaterThanZero.push(amount);
-                console.log(input.value, input.getAttribute('data-price'));
                 total += amount;
             }
         }
 
-        // Ahora 'inputsGreaterThanZero' contiene solo los inputs que cumplen la condición
-        console.log(inputsGreaterThanZero, total);
         totalAmountDisplay.textContent = total;
     };
 
@@ -32,7 +29,7 @@ const paContinuar = data => {
         data.forEach(producto=>{
             //templateDetail.querySelector('.stk').textContent = producto.prid;//
             //templateProd.querySelector('.img-box').style.backgroundImage = `url(${producto.img})`;
-            templateProd.querySelector('.description').textContent = producto.name;        
+            templateProd.querySelector('.name').textContent = producto.name;        
             templateProd.querySelector('.price').textContent = producto.price;
             templateProd.querySelector('.quantity-input').setAttribute('data-price', producto.price);
             const clone = templateProd.cloneNode(true);
@@ -65,6 +62,7 @@ const paContinuar = data => {
 
         // Actualiza el texto en el botón sticky
         totalQuantityDisplay.textContent = total;
+        paContinuar();
     };
 
     // Delega el evento click a todo el contenedor para manejar todos los botones
