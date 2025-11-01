@@ -30,7 +30,7 @@ const paContinuar = data => {
             //templateDetail.querySelector('.stk').textContent = producto.prid;//
             //templateProd.querySelector('.img-box').style.backgroundImage = `url(${producto.img})`;
             templateProd.querySelector('.name').textContent = producto.name;        
-            templateProd.querySelector('.price').textContent = producto.price;
+            templateProd.querySelector('.product-price').textContent = producto.price;
             templateProd.querySelector('.quantity-input').setAttribute('data-price', producto.price);
             const clone = templateProd.cloneNode(true);
             //clone.querySelector('.det-row').setAttribute('prid',producto.prid);
